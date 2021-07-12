@@ -3,6 +3,7 @@
 <div class="login_background">
 <div class="form_box">
 <%= form_for @user do |f| %>
+<% render partial: "layouts/errors", locals:{record: @user} %>
 
 <h3><%= f.label :username %></h3><br>
 <%= f.text_field :username %><br>
@@ -10,7 +11,6 @@
 <%= f.text_field :email %><br>
 <h3><%= f.label :password %></h3> <br>
 <%= f.password_field :password %><br>
-
 <h3><%= f.label :password_confirmation %></h3><br>
 <%= f.password_field :password_confirmation %><br>
 

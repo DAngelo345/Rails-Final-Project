@@ -1,9 +1,9 @@
 <h1> NEW USER SIGN UP.. </h1>
 
 <div class="login_background">
+<%= render partial: "layouts/errors", locals:{record: @user} %>
 <div class="form_box">
 <%= form_for @user do |f| %>
-<% render partial: "layouts/errors", locals:{record: @user} %>
 
 <h3><%= f.label :username %></h3><br>
 <%= f.text_field :username %><br>

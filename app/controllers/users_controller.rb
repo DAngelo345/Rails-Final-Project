@@ -9,10 +9,14 @@ class UsersController < ApplicationController
 
         if @user.save
             session[:user_id] = @user.id
-            redirect_to Something_path
+            redirect_to user_path(@user)
         else
             render :new
         end
+    end
+
+    def show 
+        @user = User.find(params[:id])
     end
 
     private

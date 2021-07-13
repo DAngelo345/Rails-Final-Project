@@ -18,6 +18,7 @@
     /* margin: 0;
     padding: 0px; */
   
+  
     box-sizing: border-box;
     
 }
@@ -60,7 +61,6 @@ nav ul li a:hover{
  }
  .flash{
     color: red;
+    text-decoration: none;
     list-style: none;
-
-
  }

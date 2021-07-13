@@ -1,4 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsShoeProject</title>
+    
+    <link rel="stylesheets" href="users.scss" >
+   
+  </head>
 
-<nav>
-<h1> <%= link_to "Logout", logout_path, method: "delete" %> </h1>
+  <body>
+  <nav>
+
+<ul>
+<li><%= link_to "Home", users_path %></li>
+<li><%= link_to "Create Shoe", users_path %></li>
+<li><%= link_to "Logout", logout_path, method: "delete" %></li>
+
+
+</ul>
 </nav>
+
+
+  </body>
+</html>

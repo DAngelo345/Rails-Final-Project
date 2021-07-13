@@ -5,11 +5,13 @@
 
 body{
     margin: 0;
-    padding: 0;
+    padding: 0px;
+    // box-sizing: border-box;
     font-family: sans-serif;
     background: url(new-app-background-test.jpeg)
 
 }
+
 h1 { 
     color: rgb(1, 68, 104);
     text-align: center;
@@ -18,12 +20,11 @@ h1 {
 h3 {
     color: rgb(255, 255, 255);
     text-align: center;
-   
-
 }
 .errors {
     text-align: left;
     color: red;
+    list-style: none;
 }
 
 
@@ -45,7 +46,7 @@ h3 {
 }
 .login_box{
     width: 400px;
-    height: 320px;
+    height: 280px;
     position: relative;
     margin: 6% auto;
     text-align: center;
@@ -53,3 +54,4 @@ h3 {
     border-radius: 30px;
     padding: 5px
 }
+

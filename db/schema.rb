@@ -41,4 +41,11 @@ ActiveRecord::Schema.define(version: 2021_07_12_193544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
 end
+
+#  if logged_in?
+#   <h1>please login or sign up</h1>
+  
+#   else
+#   end

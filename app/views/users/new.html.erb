@@ -4,18 +4,18 @@
 <div class="login_background">
 <%= render partial: "layouts/errors", locals:{record: @user} %>
 <div class="form_box">
-<%= form_for @user do |f| %>
+<%= form_for(@user) do |f| %>
 
 <h3><%= f.label :username %></h3><br>
 <%= f.text_field :username %><br>
 <h3><%= f.label :email %></h3><br>
-<%= f.text_field :email %><br>
+<%= f.email_field :email %><br>
 <h3><%= f.label :password %></h3> <br>
 <%= f.password_field :password %><br>
 <h3><%= f.label :password_confirmation %></h3><br>
 <%= f.password_field :password_confirmation %><br>
 
-<h4><%=f.submit "Sign Up" %></h4>
+<h4><%=f.submit "Sign Up", class: 'btn btn-default' %></h4>
 
 <% end %>
 </div>

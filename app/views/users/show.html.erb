@@ -5,9 +5,13 @@
 
 <p><% @user.shoes.each do |shoe| %></p>
 <div class="show-shoes">
-<%= shoe.brand %>
-<%= shoe.name %>
-<%= shoe.description %>
+<ul>
+<li> Brand: <%= shoe.brand %><br>
+    Image: <%= shoe.image %><br>
+     Name: <%= shoe.name %><br>
+    Description: <%= shoe.description %><br>
+</li>
+</ul>
 </div>
 
 <% end %>

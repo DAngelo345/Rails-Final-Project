@@ -1,3 +1,19 @@
 // Place all the styles related to the Shoes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+    color: whitesmoke;
+    
+    
+}
+.brands{
+    width: 400px;
+    height: 280px;
+    position: relative;
+    margin: 6% auto;
+    text-align: center;
+    background: rgb(45, 45, 45);
+    border-radius: 10px;
+    padding: 5px
+}

@@ -1,6 +1,12 @@
 class ShoesController < ApplicationController
     before_action :redirect_if_not_logged_in
 
+    def index
+        @shoes = Shoe.all
+        # binding.pry
+       
+    end
+
     def new
         @shoe = Shoe.new 
     end
@@ -18,8 +24,14 @@ class ShoesController < ApplicationController
             render :new
         end
     end
+    def edit
+        @shoe = Shoe.find(params[:id])
+    end
 
     def update
+        @shoe = Shoe.find(params[:id])
+        @shoe.update(shoe_params)
+        redirect_to shoe_path(@shoe)
     end
 
     def destroy

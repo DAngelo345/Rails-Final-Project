@@ -1,10 +1,6 @@
+
 class UsersController < ApplicationController
-# nav bar if statement 
-    #  <% if logged_in? %>
-#   <h1>please login or sign up</h1>
-  
-#   <% else %>
-#   <% end %>
+
 
     def new
         # render :layout => "signup"

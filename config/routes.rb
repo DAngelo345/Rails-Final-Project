@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#logout", as: "logout"
 
+  resources :users do
+    # nested resource for posts
+    resources :shoes, only: [:show, :index, :new]
+  end
+
   resources :favorites
   resources :shoes
   resources :users

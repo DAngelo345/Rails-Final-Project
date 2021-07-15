@@ -35,6 +35,8 @@ class ShoesController < ApplicationController
     end
 
     def destroy
+        Shoe.find(params[:id]).destroy
+        redirect_to user_path
     end
 
     private

@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :shoes, only: [:show, :index, :new]
   end
 
+  resources :shoes do 
+    resources :favorites, only: [:new, :create, :index]
+  end
   resources :favorites
-  resources :shoes
-  resources :users
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

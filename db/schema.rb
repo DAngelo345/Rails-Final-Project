@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_193544) do
+ActiveRecord::Schema.define(version: 2021_07_15_022851) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "shoe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating"
+    t.string "comment"
     t.index ["shoe_id"], name: "index_favorites_on_shoe_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
@@ -41,11 +43,4 @@ ActiveRecord::Schema.define(version: 2021_07_12_193544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-
 end
-
-#  if logged_in?
-#   <h1>please login or sign up</h1>
-  
-#   else
-#   end

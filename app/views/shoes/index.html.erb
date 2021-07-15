@@ -1,10 +1,10 @@
 <% @shoes.each do |shoe| %>
 <div class="brands">
 
-<h1><%= link_to shoe.brand, shoe_path(shoe)%></h1>
-<h1> <%= shoe.name %> </h1>
-<h1> <%= shoe.image %> </h1>
-<h1> <%= shoe.description %> </h1>
+<h1> Brand: <%= link_to shoe.brand, shoe_path(shoe)%></h1>
+<h2> Name: <%= shoe.name %> </h2>
+<h2> Image: <%= shoe.image %> </h2>
+<h2> Description: <%= shoe.description %> </h2>
 
 </div>
 

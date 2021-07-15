@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
-        return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
+        return redirect_to(controller: 'sessions', action: 'login') unless logged_in?
     end
 end

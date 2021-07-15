@@ -4,15 +4,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#logout", as: "logout"
 
-  resources :users do
-    # nested resource for posts
-    resources :shoes, only: [:show, :index, :new]
-  end
 
-  resources :shoes do 
-    resources :favorites, only: [:new, :create, :index]
+  resources :users do 
+    resources :favorites, only: [:show, :index]
   end
   resources :favorites
+  resources :shoes
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

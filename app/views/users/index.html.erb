@@ -1,0 +1,18 @@
+<% @users.each do |user| %>
+
+<%# <div class="brands">  %>
+<% user.shoes.each do |shoe| %>
+
+
+<li><h1> Brand: <%= link_to shoe.brand, shoe_path(shoe)%></h1>
+<h1> Name: <%= shoe.name %> </h1>
+<h1> Image: <%= shoe.image %> </h1>
+<h1> Description: <%= shoe.description %> </h1>
+
+
+<%end%>
+<%# </div> %>
+
+
+
+<% end %>

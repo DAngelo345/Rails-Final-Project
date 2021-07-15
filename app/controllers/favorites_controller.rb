@@ -1,4 +1,7 @@
 class FavoritesController < ApplicationController
+
+    before_action :redirect_if_not_logged_in
+    
     def index
         @favorites = Favorite.all
         # binding.pry
@@ -40,6 +43,6 @@ class FavoritesController < ApplicationController
     private
 
     def favorite_params
-        params.require(:favorite).permit(:favorite_count)
+        params.require(:favorite).permit(:favorite_count, :rating, :comment)
     end
 end

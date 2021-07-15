@@ -1,10 +1,15 @@
 
 class UsersController < ApplicationController
 
-
+    before_action :redirect_if_not_logged_in
     def new
         # render :layout => "signup"
         @user = User.new
+    end
+
+    def index
+        @users = User.all
+        # binding.pry
     end
     
     def create

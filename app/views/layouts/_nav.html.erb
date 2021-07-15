@@ -4,9 +4,10 @@
 
 <ul>
 <% if logged_in? %>
-<li><%= link_to "Home", shoes_path %></li>
+<li><%= link_to "Home", users_path %></li>
 <li><%= link_to "Profile", user_path(current_user) %></li>
 <li><%= link_to "Create Shoe", new_shoe_path %></li>
+ <li><%= link_to "Favorites", user_favorites_path(current_user) %></li>
 <li><%= link_to "Logout", logout_path, method: "delete" %></li>
 <% else %>
 <li><%= link_to "Login", login_path %></li>

@@ -1,0 +1,19 @@
+<%# <%= form_tag shoes_path, method: :get do %>
+<%# <%= label_tag :search %>
+<%# <%= text_field_tag :name_of_shoe, params["name_of_shoe"], placeholder: "search"%> 
+
+<%# <%submit_tag "search", class: 'btn btn-default' %>
+<%# <% end %>
+
+<%# <%if params.entries.any? %> 
+
+<%# <ul><% @params.entries.each do |param|%>
+<%# <><%= "#{param[0]}: #{param[1]}"%> 
+<%# <%end%> 
+
+<%# <%end%> 
+<br>
+<form action="/search">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"> search </button>
+</form>

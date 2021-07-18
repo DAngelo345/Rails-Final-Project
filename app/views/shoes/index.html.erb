@@ -1,12 +1,15 @@
+
+<h1> Search Results </h1>
 <% @shoes.each do |shoe| %>
 <div class="brands">
-
-<h1> Brand: <%= link_to shoe.brand, shoe_path(shoe)%></h1>
-<h2> Name: <%= shoe.name %> </h2>
-<h2> Image: <%= shoe.image %> </h2>
-<h2> Description: <%= shoe.description %> </h2>
-
+<ul>
+<p><li><%= shoe.brand %></li></p>
+<p><li><%= shoe.name %></li></p>
+<p><li><%= shoe.image %></li></p>
+<p><li><%= shoe.description %></li></p>
+</ul>
 </div>
 
-
 <% end %>
+
+

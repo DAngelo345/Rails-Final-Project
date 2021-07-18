@@ -3,10 +3,28 @@ class FavoritesController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :set_shoe
 
+#     <% @favorites.each do |favorite| %>
+#         <p> Brand : <%= favorite.shoe.brand %> </p>
+#         <p> Name : <%= favorite.shoe.name %> </p>
+#         <p> Rating : <%= favorite.rating %> </p>
+#         <p> Your comment : <%= favorite.comment %> </p>
+#         <p> <%= link_to "Delete", favorite, method: :delete, data: { confirm: "Really?" } %></p>
+# <% end %>
+
     def index
         @favorites = Favorite.all
-        # binding.pry
-       
+        # current_user.favorites.each do |favorite|
+        #     binding.pry
+        # favorite.shoe.brand 
+        # favorite.rating 
+        # favorite.comment
+        # end 
+        # @favorites.each do |favorite|
+        #         binding.pry
+        #     favorite.shoe.brand 
+        #     favorite.rating 
+        #     favorite.comment
+        #     end 
     end
 
     def new
@@ -19,8 +37,8 @@ class FavoritesController < ApplicationController
 
     def create
         # binding.pry
-        @favorite = @shoe.favorites.build(favorite_params)
-        @favorite.user = current_user
+        @favorite = current_user.favorites.build(favorite_params)
+        @favorite.shoe = @shoe
         if @favorite.save
             redirect_to @shoe
         else

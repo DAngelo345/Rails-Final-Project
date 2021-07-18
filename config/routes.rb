@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/search", to: "shoes#search"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   get "/login", to: "sessions#login", as: "login"

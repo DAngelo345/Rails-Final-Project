@@ -2,9 +2,14 @@ class ShoesController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @shoes = Shoe.all
+        # @shoes = Shoe.all
+        @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
         # binding.pry
-       
+    end
+
+    def search
+        @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
+        # binding.pry
     end
 
     def new

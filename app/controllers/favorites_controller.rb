@@ -5,8 +5,18 @@ class FavoritesController < ApplicationController
 
     def index
         @favorites = Favorite.all
-        # binding.pry
-       
+        # current_user.favorites.each do |favorite|
+        #     binding.pry
+        # favorite.shoe.brand 
+        # favorite.rating 
+        # favorite.comment
+        # end 
+        # @favorites.each do |favorite|
+        #         binding.pry
+        #     favorite.shoe.brand 
+        #     favorite.rating 
+        #     favorite.comment
+        #     end 
     end
 
     def new

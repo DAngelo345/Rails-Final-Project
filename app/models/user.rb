@@ -9,6 +9,7 @@ class User < ApplicationRecord
     has_many :shoes
     has_many :favorites
     has_many :favorited_shoes, through: :favorites, source: :shoe
+    # has_many :shoes, through: :favorites
 
     
 end

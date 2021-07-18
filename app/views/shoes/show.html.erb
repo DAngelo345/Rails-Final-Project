@@ -5,6 +5,8 @@
 <h1>Image: <%= @shoe.image %></h1><br>
 <h1>Name: <%= @shoe.name %></h1><br>
 <h1>Description: <%= @shoe.description %></h1><br>
+<%= render 'rating_comment' %>
+
 <h1><%= link_to "Edit", edit_shoe_path %></h1>
  <h1><%= link_to "Delete", @shoe, method: :delete, data: { confirm: "Really?" } %></h1>
  <% else %>
@@ -12,5 +14,8 @@
 <h1>Image: <%= @shoe.image %></h1><br>
 <h1>Name: <%= @shoe.name %></h1><br>
 <h1>Description: <%= @shoe.description %></h1><br>
+
+<%= render 'rating_comment' %>
+
 
  <% end %>

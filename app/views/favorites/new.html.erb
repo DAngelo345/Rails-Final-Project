@@ -1,0 +1,6 @@
+<%= form_for @favorite do |f| %>
+  <h1>select shoe name: <%= f.collection_select :shoe_name, Shoe.all, :name, :name %></h1>
+  <h1>rate this shoe: <%= f.number_field :rating %></h1>
+  <h1>leave a comment: <%= f.text_field :comment %></h1><br>
+  <h1> <%= f.submit "comment on a shoe", class: 'btn btn-default' %></h1>
+<% end %> 

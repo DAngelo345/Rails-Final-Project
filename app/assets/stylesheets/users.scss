@@ -1,20 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+*{
+    /* margin: 0;
+    padding: 0px; */
+  
+    //   text-emphasis-color: pink;
+    
+    box-sizing: border-box;
+    
+}
 
 body{
     margin: 0;
     padding: 0px;
     // box-sizing: border-box;
     font-family: sans-serif;
-    background: url(new-app-background-test.jpeg)
+    background: url(white-wood.jpeg)
+   
     // background: url(negative.jpg)
    
 }
 
 h1 { 
-    color: rgb(1, 68, 104);
+    color: rgb(0, 0, 0);
     // color: rgb(0, 0, 0);
    
     text-align: center;
@@ -56,18 +65,11 @@ h3 {
     padding: 5px
 }
 
-*{
-    /* margin: 0;
-    padding: 0px; */
-  
-  text-emphasis-color: pink;
-    box-sizing: border-box;
-    
-}
+
 nav{
     width: 100%;
     height: 75px;
-    background-color: rgb(1, 68, 104);
+    background-color: rgb(0, 0, 0);
     line-height:60px;
     padding:0px 80px;
     position:relative;
@@ -88,16 +90,23 @@ nav ul li a{
    
     font-size: 18px;
     text-transform: uppercase;
+    list-style: none;
     text-decoration: none;
     padding:0px 32px;
 }
 nav ul li a:hover{
-    color:rgb(0, 0, 0);
+    color:rgb(0, 251, 255);
     text-decoration: none;
+    list-style: none;
 }
 
 li{
+    list-style: none;
+    // color:rgb(68, 83, 143);
+}
 
+li:hover{
+    list-style: none;
     color:black;
 }
 // .show-shoes:hover{

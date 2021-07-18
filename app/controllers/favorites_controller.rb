@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
 
     before_action :redirect_if_not_logged_in
-    
+    before_action :set_shoe
+
     def index
         @favorites = Favorite.all
         # binding.pry
@@ -17,23 +18,25 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        @favorite = current_user.favorites.build(favorite_params)
-        
+        # binding.pry
+        @favorite = @shoe.favorites.build(favorite_params)
+        @favorite.user = current_user
         if @favorite.save
-            redirect_to @favorite
+            redirect_to @shoe
         else
-            render :new
+            redirect_to users_path
         end
     end
+
     def edit
         @favorite = Favorite.find(params[:id])
     end
 
-    def update
-        @favorite = Favorite.find(params[:id])
-        @favorite.update(favorite_params)
-        redirect_to favorite_path(@shoe)
-    end
+    # def update
+    #     @favorite = Favorite.find(params[:id])
+    #     @favorite.update(favorite_params)
+    #     redirect_to favorite_path(@shoe)
+    # end
 
     def destroy
         Favorite.find(params[:id]).destroy
@@ -42,7 +45,11 @@ class FavoritesController < ApplicationController
 
     private
 
+    def set_shoe
+        @shoe = Shoe.find(params[:shoe_id]) if params[:shoe_id]
+    end
+
     def favorite_params
-        params.require(:favorite).permit(:favorite_count, :rating, :comment)
+        params.require(:favorite).permit(:shoe_name, :rating, :comment)
     end
 end

@@ -1,0 +1,18 @@
+<div class="login_background">
+<%= render partial: "layouts/errors", locals:{record: @shoe} %>
+
+<div class="form_box">
+<%= form_for(@shoe) do |f| %>
+<h3><%= f.label :brand %></h3><br>
+<%= f.text_field :brand %><br>
+<h3><%= f.label :name %></h3><br>
+<%= f.text_field :name %><br>
+<h3><%= f.label :image %></h3><br>
+<%= f.text_field :image %><br>
+<h3><%= f.label :description %></h3> <br>
+<%= f.text_field :description %><br>
+<h4><%=f.submit "Create a Shoe", class: 'btn btn-default' %></h4>
+
+<% end %>
+</div>
+</div>

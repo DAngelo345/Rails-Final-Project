@@ -12,7 +12,9 @@ class ShoesController < ApplicationController
     end
 
     def show
+        @favorite = Favorite.new
         @shoe = Shoe.find(params[:id])
+        # binding.pry
     end
 
     def create
@@ -21,9 +23,10 @@ class ShoesController < ApplicationController
         if @shoe.save
             redirect_to @shoe
         else
-            render :new
+            redirect_to users_path
         end
     end
+
     def edit
         @shoe = Shoe.find(params[:id])
     end
@@ -36,7 +39,7 @@ class ShoesController < ApplicationController
 
     def destroy
         Shoe.find(params[:id]).destroy
-        redirect_to user_path
+        redirect_to users_path
     end
 
     private

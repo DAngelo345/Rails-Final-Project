@@ -1,6 +1,12 @@
+
+<h1>Favorites</h1>
 <% @favorites.each do |favorite| %>
-<%binding.pry %>
-            <%= favorite.shoe.brand %>
-            <%= favorite.shoe.name %>
-          <%= favorite.rating %>
+<ul>
+      <li><h2>The User : <%= favorite.user.username %></h2></li>
+            <li><h2>brand : <%= favorite.shoe.brand %></h2></li>
+            <li><h2>name : <%= favorite.shoe.name %></h2></li>
+            <li><h2>image :<%=favorite.shoe.image%></h2></li>
+         <li><h2>rating : <%= favorite.rating %></h2></li>
+         <li><h2>comment : <%= favorite.comment %></h2></li>
+   </ul>
 <% end %>

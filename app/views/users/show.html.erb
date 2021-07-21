@@ -2,7 +2,6 @@
 <h1>Profile</h1>
 
 <h1> <%= @user.username %> </h1>
-
 <h2> Your Created Shoes </h2>
 <p><% @user.shoes.each do |shoe| %></p>
 <div class="show-shoes">
@@ -15,5 +14,17 @@
 </li>
 </ul>
 </div>
-
 <% end %>
+<div class="favorited">
+<p><h2>see posts that your friends have rated</p></h2>
+<% user = User.all %>
+<% user.each do |user|%>
+<ul>
+<li> 
+<%= link_to user.username, user_favorites_path(user) %>
+</li>
+</ul>
+<% end %>
+</div>
+
+

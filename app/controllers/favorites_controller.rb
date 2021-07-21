@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
     before_action :redirect_if_not_logged_in
     before_action :set_shoe
-
+    #<li><%=# link_to "Favorites", user_favorites_path(current_user) %></li>
 #     <% @favorites.each do |favorite| %>
 #         <p> Brand : <%= favorite.shoe.brand %> </p>
 #         <p> Name : <%= favorite.shoe.name %> </p>
@@ -12,19 +12,13 @@ class FavoritesController < ApplicationController
 # <% end %>
 
     def index
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            #nested
+            @favorites = @user.favorites
+        else
         @favorites = Favorite.all
-        # current_user.favorites.each do |favorite|
-        #     binding.pry
-        # favorite.shoe.brand 
-        # favorite.rating 
-        # favorite.comment
-        # end 
-        # @favorites.each do |favorite|
-        #         binding.pry
-        #     favorite.shoe.brand 
-        #     favorite.rating 
-        #     favorite.comment
-        #     end 
+        end
+       
     end
 
     def new

@@ -3,12 +3,12 @@ class ShoesController < ApplicationController
 
     def index
         # @shoes = Shoe.all
-        @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
+        @shoes = Shoe.name_of_shoe(params[:search])
         # binding.pry
     end
 
     def search
-        @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
+        # @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
         # binding.pry
     end
 

@@ -1,15 +1,23 @@
 class ShoesController < ApplicationController
     before_action :redirect_if_not_logged_in
 
+    # <%= link_to "nike branded shoes", brand_path
+
     def index
         # @shoes = Shoe.all
-        @shoes = Shoe.name_of_shoe(params[:search])
+            @shoes = Shoe.name_of_shoe(params[:search])
+        # end
         # binding.pry
     end
 
     def search
         # @shoes = Shoe.where("name LIKE ?", "%#{params[:search]}%")
         # binding.pry
+    end
+
+    def brand
+        @users = Shoe.find_by_brand(params[:brand])
+        render "users/index"
     end
 
     def new

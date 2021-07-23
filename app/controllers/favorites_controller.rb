@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
 
     before_action :redirect_if_not_logged_in
     before_action :set_shoe
+    #<p> <%= link_to "delete", favorite_delete_path, method: "delete" %> </p>
     #<li><%=# link_to "Favorites", user_favorites_path(current_user) %></li>
 #     <% @favorites.each do |favorite| %>
 #         <p> Brand : <%= favorite.shoe.brand %> </p>
@@ -18,7 +19,12 @@ class FavoritesController < ApplicationController
         else
         @favorites = Favorite.all
         end
-       
+    end
+
+    def shoes_with_rating_of_10
+        @favorites = Favorite.where(rating: 10).all
+    render "index"
+        # binding.pry
     end
 
     def new
@@ -52,7 +58,7 @@ class FavoritesController < ApplicationController
 
     def destroy
         Favorite.find(params[:id]).destroy
-        redirect_to user_path
+        redirect_to user_path(current_user)
     end
 
     private

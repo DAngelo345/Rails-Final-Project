@@ -12,7 +12,7 @@
         <div class="each-fav">
             <p> <%= rating_comment.user.username %>'s Rating : <%= rating_comment.rating %></p>
             <p> <%= rating_comment.comment %></p>
-            <p> <%= link_to "Delete", rating_comment, method: :delete, data: { confirm: "Really?" } %></p>
+            <p> <%= link_to "delete", favorite_path(rating_comment), method: "delete" %> </p>
         </div>
     <% end %>
 </div>

@@ -1,12 +1,15 @@
 
 <h1>Favorites</h1>
+
+<h1><%= link_to "rating10", rating10_path %></h1>
 <% @favorites.each do |favorite| %>
 <ul>
       <li><h2>The User : <%= favorite.user.username %></h2></li>
             <li><h2>brand : <%= favorite.shoe.brand %></h2></li>
             <li><h2>name : <%= favorite.shoe.name %></h2></li>
-            <li><h2>image :<%=favorite.shoe.image%></h2></li>
+            <li><h2>image: <%= image_tag(favorite.shoe.image, size: "100x100") %></h2></li>
          <li><h2>rating : <%= favorite.rating %></h2></li>
          <li><h2>comment : <%= favorite.comment %></h2></li>
    </ul>
+
 <% end %>

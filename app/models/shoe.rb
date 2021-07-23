@@ -17,9 +17,13 @@ class Shoe < ApplicationRecord
     end
 
     def find_shoes_rated_10
-        # this is usful sorting filtering out pages say someone 
+        # this is useful sorting filtering out pages say someone 
         # only wants to see shoes that are in their size 
         fav = Favorite.where(rating: 10).all
+    end
+
+    def delete_shoe
+        Shoe.find_by_brand("yeezy").destroy
     end
 
     

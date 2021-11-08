@@ -1,0 +1,9 @@
+
+<% @shoes.each do  |shoe|%>
+
+<h1>Brand: <%= shoe.brand %></h1><br>
+<h1>Image: <%= image_tag(shoe.image, size: "100x110") %></h1><br>
+<h1>Name: <%= shoe.name %></h1><br>
+<h1>Description: <%= shoe.description %></h1><br>
+
+<% end %>

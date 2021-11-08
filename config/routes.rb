@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete "/delete", to: "favorites#destroy", as: "favorite_delete"
   get "/auth/google_oauth2/callback", to: "sessions#omniauth"
   get "/rating10", to: "favorites#shoes_with_rating_of_10", as: "rating10"
-  get "/brands/:type", to: "shoes#brand", as: "brand"
+  get "/brands", to: "shoes#brand", as: "brand"
   # :provider
   
   resources :users do 

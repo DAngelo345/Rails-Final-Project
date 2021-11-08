@@ -16,8 +16,9 @@ class ShoesController < ApplicationController
     end
 
     def brand
-        @users = Shoe.find_by_brand(params[:brand])
-        render "users/index"
+        # @shoes = Shoe.find(params[:brand])
+         @shoes = Shoe.where(brand: "NIKE ")
+        #  binding.pry
     end
 
     def new

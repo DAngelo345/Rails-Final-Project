@@ -2,8 +2,8 @@ class FavoritesController < ApplicationController
 
     before_action :redirect_if_not_logged_in
     before_action :set_shoe
-    #<p> <%= link_to "delete", favorite_delete_path, method: "delete" %> </p>
-    #<li><%=# link_to "Favorites", user_favorites_path(current_user) %></li>
+#<p> <%= link_to "delete", favorite_delete_path, method: "delete" %> </p>
+#<li><%=# link_to "Favorites", user_favorites_path(current_user) %></li>
 #     <% @favorites.each do |favorite| %>
 #         <p> Brand : <%= favorite.shoe.brand %> </p>
 #         <p> Name : <%= favorite.shoe.name %> </p>
